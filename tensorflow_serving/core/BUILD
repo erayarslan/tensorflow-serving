@@ -28,7 +28,7 @@ cc_library(
     ],
     deps = [
         "//tensorflow_serving/util:hash",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -49,7 +49,7 @@ cc_library(
     ],
     deps = [
         ":servable_id",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -59,8 +59,8 @@ cc_test(
     deps = [
         ":servable_data",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -74,7 +74,7 @@ cc_library(
         ":source",
         "//tensorflow_serving/resources:resources_proto",
         "//tensorflow_serving/util:any_ptr",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -91,7 +91,7 @@ cc_library(
         "//tensorflow_serving/resources:resource_values",
         "//tensorflow_serving/util:any_ptr",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -105,9 +105,9 @@ cc_test(
         ":simple_loader",
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -119,7 +119,7 @@ cc_library(
     ],
     deps = [
         ":servable_data",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -133,7 +133,7 @@ cc_library(
         ":servable_data",
         ":source",
         "//tensorflow_serving/util:observer",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -150,7 +150,7 @@ cc_library(
         ":storage_path",
         ":target",
         "//tensorflow_serving/util:class_registration",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -164,7 +164,7 @@ cc_test(
         "//tensorflow_serving/core/test_util:fake_storage_path_source_adapter",
         "//tensorflow_serving/core/test_util:mock_storage_path_target",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -178,7 +178,7 @@ cc_library(
         ":source",
         ":source_adapter",
         ":target",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -191,8 +191,8 @@ cc_test(
         ":storage_path",
         "//tensorflow_serving/core/test_util:mock_storage_path_target",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -204,8 +204,8 @@ cc_library(
     ],
     deps = [
         ":source_router",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:tensorflow",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
     ],
 )
 
@@ -220,8 +220,8 @@ cc_test(
         ":target",
         "//tensorflow_serving/core/test_util:mock_storage_path_target",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -233,8 +233,8 @@ cc_library(
     ],
     deps = [
         ":source_router",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:tensorflow",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
     ],
 )
 
@@ -249,8 +249,8 @@ cc_test(
         ":target",
         "//tensorflow_serving/core/test_util:mock_storage_path_target",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -263,7 +263,7 @@ cc_library(
     deps = [
         ":servable_data",
         ":servable_id",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -273,7 +273,7 @@ cc_test(
     deps = [
         ":storage_path",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -285,7 +285,7 @@ cc_library(
     ],
     deps = [
         ":servable_id",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -298,7 +298,7 @@ cc_library(
     deps = [
         ":loader",
         "//tensorflow_serving/util:any_ptr",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -312,7 +312,7 @@ cc_library(
         ":servable_handle",
         ":servable_id",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -324,7 +324,7 @@ cc_test(
         "//tensorflow_serving/core/test_util:servable_handle_test_util",
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/util:any_ptr",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -356,7 +356,7 @@ cc_library(
         ":source",
         ":source_adapter",
         "//tensorflow_serving/util:unique_ptr_with_deps",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -392,7 +392,7 @@ cc_library(
         ":servable_state",
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -403,7 +403,7 @@ cc_test(
     deps = [
         ":servable_state_monitor",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow/contrib/batching/test_util:fake_clock_env",
+        "@org_tensorflow//tensorflow-xsmm/contrib/batching/test_util:fake_clock_env",
     ],
 )
 
@@ -416,7 +416,7 @@ cc_library(
         ":servable_id",
         "//tensorflow_serving/util:optional",
         "//tensorflow_serving/util:retrier",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -429,10 +429,10 @@ cc_test(
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/test_util",
         "//tensorflow_serving/util:any_ptr",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
-        "@org_tensorflow//tensorflow/core:tensorflow",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -456,7 +456,7 @@ cc_library(
         "//tensorflow_serving/util:hash",
         "//tensorflow_serving/util:inline_executor",
         "//tensorflow_serving/util:threadpool_executor",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -475,9 +475,9 @@ cc_test(
         "//tensorflow_serving/util:any_ptr",
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:threadpool_executor",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -503,8 +503,8 @@ cc_library(
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:observer",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/contrib/batching/util:periodic_function_dynamic",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/contrib/batching/util:periodic_function_dynamic",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -523,9 +523,9 @@ cc_test(
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/util:any_ptr",
         "//tensorflow_serving/util:event_bus",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -542,9 +542,9 @@ cc_test(
         ":servable_handle",
         ":simple_loader",
         "//tensorflow_serving/core/test_util:manager_test_util",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:tensorflow",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -561,7 +561,7 @@ cc_library(
         ":servable_handle",
         ":servable_id",
         ":simple_loader",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -590,7 +590,7 @@ cc_library(
         ":servable_id",
         ":source_adapter",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -611,8 +611,8 @@ cc_test(
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:optional",
         "//tensorflow_serving/util:threadpool_executor",
-        "@org_tensorflow//tensorflow/core:lib",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 
@@ -627,7 +627,7 @@ cc_library(
         ":loader_harness",
         ":servable_id",
         "//tensorflow_serving/util:optional",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -706,7 +706,7 @@ cc_library(
         ":servable_state_monitor",
         ":source",
         ":target",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -719,7 +719,7 @@ cc_library(
     ],
     deps = [
         "//tensorflow_serving/config:log_collector_config_proto",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -759,7 +759,7 @@ cc_library(
         ":log_collector",
         ":logging_proto",
         "//tensorflow_serving/config:logging_config_proto",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -779,7 +779,7 @@ cc_test(
         "//tensorflow_serving/core/test_util:mock_request_logger",
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -797,7 +797,7 @@ cc_library(
         "//tensorflow_serving/config:logging_config_proto",
         "//tensorflow_serving/core:logging_proto",
         "//tensorflow_serving/util:fast_read_dynamic_ptr",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -817,7 +817,7 @@ cc_test(
         "//tensorflow_serving/core/test_util:mock_request_logger",
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )

@@ -1,7 +1,7 @@
 # TensorFlow Serving external dependencies that can be loaded in WORKSPACE
 # files.
 
-load('@org_tensorflow//tensorflow:workspace.bzl', 'tf_workspace')
+load('@org_tensorflow//tensorflow-xsmm:workspace.bzl', 'tf_workspace')
 
 def tf_serving_workspace():
   '''All TensorFlow Serving external dependencies.'''

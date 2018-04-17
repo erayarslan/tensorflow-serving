@@ -16,6 +16,6 @@ cc_library(
     deps = [
         "//tensorflow_serving/util:file_probing_env",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )

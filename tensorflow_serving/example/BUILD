@@ -34,7 +34,7 @@ py_binary(
     srcs_version = "PY2AND3",
     deps = [
         ":mnist_input_data",
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 
@@ -48,7 +48,7 @@ py_binary(
         ":mnist_input_data",
         "//tensorflow_serving/apis:predict_proto_py_pb2",
         "//tensorflow_serving/apis:prediction_service_proto_py_pb2",
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 
@@ -60,7 +60,7 @@ py_binary(
     srcs_version = "PY2AND3",
     deps = [
         "@inception_model//inception",
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 
@@ -73,7 +73,7 @@ py_binary(
     deps = [
         "//tensorflow_serving/apis:predict_proto_py_pb2",
         "//tensorflow_serving/apis:prediction_service_proto_py_pb2",
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 
@@ -85,7 +85,7 @@ cc_binary(
     deps = [
         "//tensorflow_serving/apis:prediction_service_proto",
         "@grpc//:grpc++_unsecure",
-        "@org_tensorflow//tensorflow/core:framework",
+        "@org_tensorflow//tensorflow-xsmm/core:framework",
         "@protobuf_archive//:protobuf_lite",
     ],
 )

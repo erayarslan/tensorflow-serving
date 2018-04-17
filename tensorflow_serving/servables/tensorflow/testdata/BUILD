@@ -41,8 +41,8 @@ py_binary(
     ],
     srcs_version = "PY2AND3",
     deps = [
-        "@org_tensorflow//tensorflow:tensorflow_py",
-        "@org_tensorflow//tensorflow/contrib/session_bundle:exporter",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm/contrib/session_bundle:exporter",
     ],
 )
 
@@ -53,7 +53,7 @@ py_binary(
     ],
     srcs_version = "PY2AND3",
     deps = [
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 
@@ -64,7 +64,7 @@ py_binary(
     ],
     srcs_version = "PY2AND3",
     deps = [
-        "@org_tensorflow//tensorflow:tensorflow_py",
+        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
     ],
 )
 

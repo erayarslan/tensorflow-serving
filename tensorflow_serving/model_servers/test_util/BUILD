@@ -42,7 +42,7 @@ cc_library(
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:unique_ptr_with_deps",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
         "@protobuf_archive//:cc_wkt_protos",
         "@protobuf_archive//:protobuf_lite",
     ],
@@ -63,7 +63,7 @@ cc_library(
         "//tensorflow_serving/servables/tensorflow/testdata:half_plus_two_2_versions/00000124/export.data-00000-of-00001",
         "//tensorflow_serving/servables/tensorflow/testdata:half_plus_two_2_versions/00000124/export.index",
         "//tensorflow_serving/servables/tensorflow/testdata:half_plus_two_2_versions/00000124/export.meta",
-        "@org_tensorflow//tensorflow/cc/saved_model:saved_model_half_plus_two",
+        "@org_tensorflow//tensorflow-xsmm/cc/saved_model:saved_model_half_plus_two",
     ],
     visibility = [
         "//visibility:public",
@@ -80,7 +80,7 @@ cc_library(
         "//tensorflow_serving/servables/tensorflow:session_bundle_source_adapter_proto",
         "//tensorflow_serving/test_util",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow/core:test",
+        "@org_tensorflow//tensorflow-xsmm/core:test",
     ],
 )
 

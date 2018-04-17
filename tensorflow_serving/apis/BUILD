@@ -21,7 +21,7 @@ filegroup(
 load("//tensorflow_serving:serving.bzl", "serving_proto_library")
 load("//tensorflow_serving:serving.bzl", "serving_proto_library_py")
 load("//tensorflow_serving:serving.bzl", "serving_go_grpc_library")
-load("@org_tensorflow//tensorflow/core:platform/default/build_config.bzl", "tf_pyclif_proto_library")
+load("@org_tensorflow//tensorflow-xsmm/core:platform/default/build_config.bzl", "tf_pyclif_proto_library")
 
 serving_proto_library(
     name = "get_model_metadata_proto",
@@ -30,7 +30,7 @@ serving_proto_library(
     java_api_version = 2,
     deps = [
         ":model_proto",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
         "@protobuf_archive//:cc_wkt_protos",
     ],
 )
@@ -41,7 +41,7 @@ serving_proto_library_py(
     proto_library = "get_model_metadata_proto",
     deps = [
         ":model_proto_py_pb2",
-        "@org_tensorflow//tensorflow/core:protos_all_py",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
     ],
 )
 
@@ -51,7 +51,7 @@ serving_proto_library(
     cc_api_version = 2,
     java_api_version = 2,
     deps = [
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
         "@protobuf_archive//:cc_wkt_protos",
     ],
 )
@@ -61,7 +61,7 @@ serving_proto_library_py(
     srcs = ["input.proto"],
     proto_library = "input_proto",
     deps = [
-        "@org_tensorflow//tensorflow/core:protos_all_py",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
     ],
 )
 
@@ -102,7 +102,7 @@ serving_proto_library(
     java_api_version = 2,
     deps = [
         ":model_proto",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
     ],
 )
 
@@ -112,7 +112,7 @@ serving_proto_library_py(
     proto_library = "predict_proto",
     deps = [
         ":model_proto_py_pb2",
-        "@org_tensorflow//tensorflow/core:protos_all_py",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
     ],
 )
 
@@ -245,7 +245,7 @@ serving_proto_library_py(
     deps = [
         ":input_proto_py_pb2",
         ":model_proto_py_pb2",
-        "@org_tensorflow//tensorflow/core:protos_all_py",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
     ],
 )
 
@@ -304,7 +304,7 @@ serving_proto_library_py(
     deps = [
         ":input_proto_py_pb2",
         ":model_proto_py_pb2",
-        "@org_tensorflow//tensorflow/core:protos_all_py",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
     ],
 )
 
@@ -316,7 +316,7 @@ serving_proto_library(
     java_api_version = 2,
     deps = [
         ":model_proto",
-        "@org_tensorflow//tensorflow/core:protos_all_cc",
+        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
     ],
 )
 
@@ -331,7 +331,7 @@ cc_library(
     hdrs = ["classifier.h"],
     deps = [
         ":classification_proto",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
 
@@ -340,6 +340,6 @@ cc_library(
     hdrs = ["regressor.h"],
     deps = [
         ":regression_proto",
-        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow-xsmm/core:lib",
     ],
 )
