@@ -30,7 +30,7 @@ cc_library(
     hdrs = ["event_bus.h"],
     visibility = ["//visibility:public"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -48,7 +48,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         ":class_registration_util",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
         "@protobuf_archive//:cc_wkt_protos",
     ],
 )
@@ -58,7 +58,7 @@ cc_library(
     hdrs = ["observer.h"],
     visibility = ["//visibility:public"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -71,7 +71,7 @@ cc_library(
     srcs = ["hash.cc"],
     hdrs = ["hash.h"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -82,8 +82,8 @@ cc_test(
     deps = [
         ":observer",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/contrib/batching/util:periodic_function",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/contrib/batching/util:periodic_function",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -94,7 +94,7 @@ cc_test(
     deps = [
         ":event_bus",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/contrib/batching/test_util:fake_clock_env",
+        "@org_tensorflow//tensorflow/contrib/batching/test_util:fake_clock_env",
     ],
 )
 
@@ -102,7 +102,7 @@ cc_library(
     name = "fast_read_dynamic_ptr",
     hdrs = ["fast_read_dynamic_ptr.h"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -112,8 +112,8 @@ cc_test(
     deps = [
         ":fast_read_dynamic_ptr",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:tensorflow",
     ],
 )
 
@@ -122,10 +122,10 @@ cc_test(
     srcs = ["fast_read_dynamic_ptr_benchmark.cc"],
     deps = [
         ":fast_read_dynamic_ptr",
-        "@org_tensorflow//tensorflow-xsmm/contrib/batching/util:periodic_function",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/contrib/batching/util:periodic_function",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:tensorflow",
+        "@org_tensorflow//tensorflow/core:test",
     ],
 )
 
@@ -135,7 +135,7 @@ cc_library(
     hdrs = ["optional.h"],
     visibility = ["//visibility:public"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -148,7 +148,7 @@ cc_test(
     deps = [
         ":optional",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -167,7 +167,7 @@ cc_library(
     name = "cleanup",
     hdrs = ["cleanup.h"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -194,7 +194,7 @@ cc_library(
     hdrs = ["inline_executor.h"],
     deps = [
         ":executor",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -213,7 +213,7 @@ cc_library(
     hdrs = ["threadpool_executor.h"],
     deps = [
         ":executor",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -232,7 +232,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         ":any_ptr",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -254,7 +254,7 @@ cc_library(
     hdrs = ["file_probing_env.h"],
     visibility = ["//visibility:public"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -263,7 +263,7 @@ cc_library(
     srcs = ["class_registration_util.cc"],
     hdrs = ["class_registration_util.h"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -284,7 +284,7 @@ cc_library(
     srcs = ["retrier.cc"],
     hdrs = ["retrier.h"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -294,7 +294,7 @@ cc_test(
     deps = [
         ":retrier",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -304,7 +304,7 @@ cc_library(
     hdrs = ["status_util.h"],
     deps = [
         "//tensorflow_serving/util:status_proto",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -337,7 +337,7 @@ serving_proto_library(
     java_api_version = 2,
     visibility = ["//visibility:public"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
+        "@org_tensorflow//tensorflow/core:protos_all_cc",
     ],
 )
 
@@ -346,6 +346,6 @@ serving_proto_library_py(
     srcs = ["status.proto"],
     proto_library = "status_proto",
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/core:protos_all_py",
+        "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
 )

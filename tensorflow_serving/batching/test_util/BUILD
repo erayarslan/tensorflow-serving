@@ -24,8 +24,8 @@ cc_library(
     hdrs = ["puppet_batch_scheduler.h"],
     visibility = ["//visibility:private"],
     deps = [
-        "@org_tensorflow//tensorflow-xsmm/contrib/batching:batch_scheduler",
-        "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
+        "@org_tensorflow//tensorflow/contrib/batching:batch_scheduler",
+        "@org_tensorflow//tensorflow/core:tensorflow",
     ],
 )
 
@@ -37,8 +37,8 @@ cc_test(
     deps = [
         ":puppet_batch_scheduler",
         "//tensorflow_serving/core/test_util:test_main",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:test",
     ],
 )
 
@@ -47,5 +47,5 @@ py_binary(
     name = "matrix_half_plus_two_saved_model",
     srcs = ["matrix_half_plus_two_saved_model.py"],
     srcs_version = "PY2AND3",
-    deps = ["@org_tensorflow//tensorflow-xsmm:tensorflow_py"],
+    deps = ["@org_tensorflow//tensorflow:tensorflow_py"],
 )

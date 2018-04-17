@@ -28,7 +28,7 @@ cc_library(
     linkopts = ["-lm"],
     deps = [
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:testlib",
+        "@org_tensorflow//tensorflow/core:testlib",
     ],
 )
 
@@ -40,7 +40,7 @@ cc_library(
         "//tensorflow_serving/core:loader",
         "//tensorflow_serving/util:any_ptr",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -52,7 +52,7 @@ cc_library(
     deps = [
         "//tensorflow_serving/core:loader",
         "//tensorflow_serving/util:any_ptr",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -68,7 +68,7 @@ cc_library(
         "//tensorflow_serving/core:simple_loader",
         "//tensorflow_serving/core:source_adapter",
         "//tensorflow_serving/core:storage_path",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
     alwayslink = 1,
 )
@@ -91,7 +91,7 @@ cc_library(
     deps = [
         "//tensorflow_serving/core:source_adapter",
         "//tensorflow_serving/core:storage_path",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -103,7 +103,7 @@ cc_library(
         "//tensorflow_serving/core:storage_path",
         "//tensorflow_serving/core:target",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -116,7 +116,7 @@ cc_library(
     deps = [
         "//tensorflow_serving/core:servable_state_monitor",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -140,7 +140,7 @@ cc_library(
         "//tensorflow_serving/core:manager",
         "//tensorflow_serving/core:servable_handle",
         "//tensorflow_serving/core:servable_id",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -152,7 +152,7 @@ cc_library(
     deps = [
         "//tensorflow_serving/core:log_collector",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -164,7 +164,7 @@ cc_library(
     deps = [
         "//tensorflow_serving/core:log_collector",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -177,7 +177,7 @@ cc_library(
         "//tensorflow_serving/core:logging_proto",
         "//tensorflow_serving/core:request_logger",
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
         "@protobuf_archive//:protobuf",
     ],
 )
@@ -199,7 +199,7 @@ cc_library(
     hdrs = ["mock_session.h"],
     deps = [
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core:core_cpu",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:core_cpu",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )

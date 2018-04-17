@@ -45,7 +45,7 @@ cc_library(
     visibility = ["//visibility:public"],
     deps = [
         ":resources_proto",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -57,8 +57,8 @@ cc_test(
         ":resource_util",
         "//tensorflow_serving/core/test_util:test_main",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:test",
     ],
 )
 
@@ -70,7 +70,7 @@ cc_library(
         ":resource_util",
         ":resources_proto",
         "//tensorflow_serving/core:loader",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 

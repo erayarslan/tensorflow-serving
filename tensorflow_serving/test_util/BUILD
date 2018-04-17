@@ -24,9 +24,9 @@ cc_library(
     hdrs = ["test_util.h"],
     deps = [
         "@com_google_googletest//:gtest",
-        "@org_tensorflow//tensorflow-xsmm/core",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/core",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:test",
         "@protobuf_archive//:protobuf",
     ],
 )

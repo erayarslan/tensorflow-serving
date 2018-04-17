@@ -74,7 +74,7 @@ cc_library(
         "//tensorflow_serving/util:event_bus",
         "//tensorflow_serving/util:optional",
         "//tensorflow_serving/util:unique_ptr_with_deps",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
         "@protobuf_archive//:cc_wkt_protos",
     ],
 )
@@ -99,9 +99,9 @@ cc_test(
         "//tensorflow_serving/model_servers/test_util:storage_path_error_injecting_source_adapter",
         "//tensorflow_serving/model_servers/test_util:storage_path_error_injecting_source_adapter_proto",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core:protos_all_cc",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core:protos_all_cc",
+        "@org_tensorflow//tensorflow/core:test",
         "@protobuf_archive//:cc_wkt_protos",
     ],
 )
@@ -120,7 +120,7 @@ cc_library(
         "//tensorflow_serving/core:servable_state_monitor",
         "//tensorflow_serving/util:status_proto",
         "//tensorflow_serving/util:status_util",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
@@ -143,10 +143,10 @@ cc_test(
         "//tensorflow_serving/servables/tensorflow:session_bundle_config_proto",
         "//tensorflow_serving/servables/tensorflow:session_bundle_source_adapter_proto",
         "//tensorflow_serving/test_util",
-        "@org_tensorflow//tensorflow-xsmm/cc/saved_model:loader",
-        "@org_tensorflow//tensorflow-xsmm/cc/saved_model:signature_constants",
-        "@org_tensorflow//tensorflow-xsmm/contrib/session_bundle",
-        "@org_tensorflow//tensorflow-xsmm/core:test",
+        "@org_tensorflow//tensorflow/cc/saved_model:loader",
+        "@org_tensorflow//tensorflow/cc/saved_model:signature_constants",
+        "@org_tensorflow//tensorflow/contrib/session_bundle",
+        "@org_tensorflow//tensorflow/core:test",
     ],
 )
 
@@ -177,17 +177,17 @@ cc_library(
     ],
     deps = [
         "@grpc//:grpc++_unsecure",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
+        "@org_tensorflow//tensorflow/core:lib",
     ],
 )
 
 SUPPORTED_TENSORFLOW_OPS = [
-    "@org_tensorflow//tensorflow-xsmm/contrib:contrib_kernels",
-    "@org_tensorflow//tensorflow-xsmm/contrib:contrib_ops_op_lib",
+    "@org_tensorflow//tensorflow/contrib:contrib_kernels",
+    "@org_tensorflow//tensorflow/contrib:contrib_ops_op_lib",
 ]
 
 TENSORFLOW_DEPS = [
-    "@org_tensorflow//tensorflow-xsmm/core:tensorflow",
+    "@org_tensorflow//tensorflow/core:tensorflow",
     "//tensorflow_serving/servables/tensorflow:classification_service",
     "//tensorflow_serving/servables/tensorflow:get_model_metadata_impl",
     "//tensorflow_serving/servables/tensorflow:multi_inference",
@@ -210,10 +210,10 @@ cc_binary(
         ":grpc_status_util",
         ":model_service_impl",
         "@protobuf_archive//:cc_wkt_protos",
-        "@org_tensorflow//tensorflow-xsmm/core:lib",
-        "@org_tensorflow//tensorflow-xsmm/core/platform/cloud:gcs_file_system",
-        "@org_tensorflow//tensorflow-xsmm/core/platform/hadoop:hadoop_file_system",
-        "@org_tensorflow//tensorflow-xsmm/core/platform/s3:s3_file_system",
+        "@org_tensorflow//tensorflow/core:lib",
+        "@org_tensorflow//tensorflow/core/platform/cloud:gcs_file_system",
+        "@org_tensorflow//tensorflow/core/platform/hadoop:hadoop_file_system",
+        "@org_tensorflow//tensorflow/core/platform/s3:s3_file_system",
         "//tensorflow_serving/apis:prediction_service_proto",
         "//tensorflow_serving/config:model_server_config_proto",
         "//tensorflow_serving/core:availability_preserving_policy",
@@ -240,12 +240,12 @@ py_test(
         "//tensorflow_serving/servables/tensorflow/testdata:saved_model_half_plus_three/00000123/saved_model.pb",
         "//tensorflow_serving/servables/tensorflow/testdata:saved_model_half_plus_three/00000123/variables/variables.data-00000-of-00001",
         "//tensorflow_serving/servables/tensorflow/testdata:saved_model_half_plus_three/00000123/variables/variables.index",
-        "@org_tensorflow//tensorflow-xsmm/cc/saved_model:saved_model_half_plus_two",
+        "@org_tensorflow//tensorflow/cc/saved_model:saved_model_half_plus_two",
     ],
     deps = [
         "//tensorflow_serving/apis:model_service_proto_py_pb2",
         "//tensorflow_serving/apis:prediction_service_proto_py_pb2",
-        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
+        "@org_tensorflow//tensorflow:tensorflow_py",
     ],
 )
 
@@ -255,7 +255,7 @@ py_binary(
     srcs_version = "PY2AND3",
     deps = [
         "//tensorflow_serving/apis:prediction_service_proto_py_pb2",
-        "@org_tensorflow//tensorflow-xsmm:tensorflow_py",
+        "@org_tensorflow//tensorflow:tensorflow_py",
     ],
 )
 
