@@ -13,9 +13,9 @@ To learn more about TensorFlow Inception model, we recommend
 
 -   [Part 1](#part_1_export_the_inception_model) shows how to export the
     Inception model
--   [Part 1](#part_2_run_in_local_docker_container) shows how to run the local
+-   [Part 2](#part_2_run_in_local_docker_container) shows how to run the local
     Docker serving image
--   [Part 2](#part_2_deploy_in_kubernetes) shows how to deploy in Kubernetes.
+-   [Part 3](#part_3_deploy_in_kubernetes) shows how to deploy in Kubernetes.
 
 ## Part 1: Export the Inception model
 
@@ -96,7 +96,7 @@ Now we want to take a serving image and
 [commit](https://docs.docker.com/engine/reference/commandline/commit/) all
 changes to a new image `$USER/inception_serving` for Kubernetes deployment.
 
-First we run a serving image, but change the entry point to just run `bash`:
+First we run a serving image as a daemon:
 
 ```shell
 docker run -d --name serving_base tensorflow/serving
