@@ -1,6 +1,8 @@
 # TensorFlow Serving
 
-![Build Status](https://storage.googleapis.com/tensorflow-serving-kokoro-build-badges/ubuntu.png)
+![Ubuntu Build Status](https://storage.googleapis.com/tensorflow-serving-kokoro-build-badges/ubuntu.svg)
+![Docker CPU Nightly Build Status](https://storage.googleapis.com/tensorflow-serving-kokoro-build-badges/docker-cpu-nightly.svg)
+![Docker GPU Nightly Build Status](https://storage.googleapis.com/tensorflow-serving-kokoro-build-badges/docker-gpu-nightly.svg)
 
 TensorFlow Serving is an open-source software library for serving
 machine learning models. It deals with the *inference* aspect of machine
