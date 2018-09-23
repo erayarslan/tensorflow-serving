@@ -144,6 +144,11 @@ class ServerCore : public Manager {
     // field.
     bool allow_version_labels = true;
 
+    // If set to true, the server will fail to start up (or fail a config
+    // reload) if, for any configured model, no versions of the model are found
+    // in the file system under the model's base path.
+    bool fail_if_no_model_versions_found = false;
+
     // Logger used for logging requests hitting the server.
     std::unique_ptr<ServerRequestLogger> server_request_logger;
 
@@ -185,10 +190,6 @@ class ServerCore : public Manager {
   virtual ServableStateMonitor* servable_state_monitor() const {
     return servable_state_monitor_.get();
   }
-
-  // Model version labels ServerCore recognizes.
-  static constexpr char kStableVersionLabel[] = "stable";
-  static constexpr char kCanaryVersionLabel[] = "canary";
 
   /// Returns a ServableHandle given a ModelSpec. Returns error if no such
   /// Servable is available -- e.g. not yet loaded, has been quiesced/unloaded,
@@ -329,6 +330,11 @@ class ServerCore : public Manager {
       ModelServerConfig::ConfigCase config_case)
       EXCLUSIVE_LOCKS_REQUIRED(config_mu_);
 
+  // Updates 'model_labels_to_versions_' based on 'config_'. Throws an error if
+  // requesting to assign a label to a version not in state kAvailable.
+  Status UpdateModelVersionLabelMap() EXCLUSIVE_LOCKS_REQUIRED(config_mu_)
+      LOCKS_EXCLUDED(model_labels_to_versions_mu_);
+
   // ************************************************************************
   // Request Processing.
   // ************************************************************************
@@ -336,6 +342,11 @@ class ServerCore : public Manager {
   // Extracts a ServableRequest from the given ModelSpec.
   Status ServableRequestFromModelSpec(const ModelSpec& model_spec,
                                       ServableRequest* servable_request) const;
+
+  // Gets the version associated with 'label', for the given model name.
+  Status GetModelVersionForLabel(const string& model_name, const string& label,
+                                 int64* version) const
+      LOCKS_EXCLUDED(model_labels_to_versions_mu_);
 
   Status GetUntypedServableHandle(
       const ServableRequest& request,
@@ -363,6 +374,10 @@ class ServerCore : public Manager {
   // The most recent config supplied to ReloadConfig().
   ModelServerConfig config_ GUARDED_BY(config_mu_);
 
+  // A model_name->label->version# map.
+  std::unique_ptr<std::map<string, std::map<string, int64>>>
+      model_labels_to_versions_ GUARDED_BY(model_labels_to_versions_mu_);
+
   struct StoragePathSourceAndRouter {
     FileSystemStoragePathSource* source;
     DynamicSourceRouter<StoragePath>* router;
@@ -375,7 +390,11 @@ class ServerCore : public Manager {
       GUARDED_BY(config_mu_);
 
   // A mutex for reconfiguration, used by ReloadConfig().
-  mutex config_mu_;
+  mutable mutex config_mu_;
+
+  // A mutex for swapping the model version label map. Should only be held for
+  // a short time (i.e. pointer swap) to avoid holding up inference requests.
+  mutable mutex model_labels_to_versions_mu_;
 };
 
 }  // namespace serving
