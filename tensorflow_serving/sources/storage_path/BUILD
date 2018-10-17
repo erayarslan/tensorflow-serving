@@ -75,9 +75,9 @@ cc_library(
             "//tensorflow_serving/core:servable_id",
             "//tensorflow_serving/core:source",
             "//tensorflow_serving/core:storage_path",
-            "@org_tensorflow//tensorflow/contrib/batching/util:periodic_function_dynamic",
             "@org_tensorflow//tensorflow/core:lib",
             "@org_tensorflow//tensorflow/core:tensorflow",
+            "@org_tensorflow//tensorflow/core/kernels/batching_util:periodic_function_dynamic",
         ],
 )
 
@@ -85,7 +85,6 @@ serving_proto_library(
     name = "file_system_storage_path_source_proto",
     srcs = ["file_system_storage_path_source.proto"],
     cc_api_version = 2,
-    java_api_version = 2,
     visibility = ["//visibility:public"],
 )
 
