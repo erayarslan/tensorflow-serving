@@ -91,7 +91,8 @@ RUN pip --no-cache-dir install \
     keras_applications \
     keras_preprocessing \
     mock \
-    numpy
+    numpy \
+    requests
 
 # Set up Bazel
 # Need >= 0.15.0 so bazel compiles work with docker bind mounts.
@@ -155,7 +156,7 @@ RUN echo "Building with Bazel options: ${TF_SERVING_BAZEL_OPTIONS}"
 
 RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 && \
     LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs:${LD_LIBRARY_PATH} \
-    bazel build --color=yes --curses=yes --config=cuda \
+    bazel build --color=yes --curses=yes --config=cuda --copt="-fPIC"\
     ${TF_SERVING_BAZEL_OPTIONS} \
     --verbose_failures \
     --output_filter=DONT_MATCH_ANYTHING \
