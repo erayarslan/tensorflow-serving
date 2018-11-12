@@ -1,7 +1,7 @@
 upper_tabs:
 # Tabs left of dropdown menu
 - include: /_upper_tabs_left.yaml
-- include: /versions/_upper_tabs_versions.yaml
+- include: /api_docs/_upper_tabs_api.yaml
 # Dropdown menu
 - name: Ecosystem
   path: /ecosystem
@@ -13,18 +13,20 @@ upper_tabs:
     other:
     - name: Guide
       contents:
+      - heading: Quick Start
+      - title: "Server: Use TensorFlow Serving with Docker"
+        path: /serving/docker
+      - title: "Client: REST API"
+        path: /serving/api_rest
+      - heading: Understanding TensorFlow Serving
       - title: Overview
         path: /serving/overview
       - title: Installation
         path: /serving/setup
       - title: Serve a TensorFlow model
         path: /serving/serving_basic
-      - title: REST API
-        path: /serving/api_rest
       - title: Build a TensorFlow ModelServer
         path: /serving/serving_advanced
-      - title: Use TensorFlow Serving with Docker
-        path: /serving/docker
       - title: Use TensorFlow Serving with Kubernetes
         path: /serving/serving_kubernetes
       - title: Create a new kind of servable
@@ -33,10 +35,16 @@ upper_tabs:
         path: /serving/custom_source
       - title: SignatureDefs in SavedModel for TensorFlow Serving
         path: /serving/signature_defs
+    - name: TFX
+      contents:
+      - title: TFX
+        path: /tfx
+        status: external
     - name: API
       skip_translation: true
       contents:
-      - heading: C++ reference
-      - title: All symbols
+      - heading: Serving APIs
+      - title: Server API (C++)
         path: /serving/api_docs/cc/
-      - include: /serving/api_docs/cc/_doxygen.yaml
+      - title: Client API (REST)
+        path: /serving/api_rest/
